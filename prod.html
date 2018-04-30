@@ -1,0 +1,279 @@
+﻿<html lang="en">
+
+<head>
+    <title>Brightcove Basic Multicamera Setup</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!--  CSS -->
+    <style>
+        .article-col {
+            width: 58%;
+            margin-left: 21%;
+            margin-right: 21%;
+        }
+
+        @media only screen and (max-width: 944px) {
+            .article-col {
+                width: 100%;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+        .article-title {
+            font-size: 25px;
+            font-weight: 700;
+            padding: 10px;
+        }
+
+        .article-body {
+            padding: 10px;
+        }
+        /*Multicamera Setup CSS*/
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+
+        .bcov-mc-selector {
+            font-size: 0;
+            background: #ebebeb;
+            font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+            font-weight: 400;
+            line-height: 1.5;
+            color: #212529;
+            text-align: left;
+        }
+
+            .bcov-mc-selector .bcov-mc-header {
+                font-size: 16px;
+                text-align: center !important;
+                padding: 10px 10px 5px;
+                color: #333333;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+
+                .bcov-mc-selector .bcov-mc-header .fas.fa-eye {
+                    color: #3865ff !important;
+                }
+
+            .bcov-mc-selector .bcov-mc-col {
+                width: 50%;
+                display: inline-block;
+                font-size: 12px;
+                padding: 15px;
+            }
+
+                .bcov-mc-selector .bcov-mc-col:nth-child(2) {
+                    padding-right: 7.5px !important;
+                }
+
+                .bcov-mc-selector .bcov-mc-col:nth-child(3) {
+                    padding-left: 7.5px !important;
+                }
+
+                .bcov-mc-selector .bcov-mc-col .bcov-mc-btn {
+                    width: 100%;
+                    background: #fff;
+                    box-shadow: 5px 5px 5px grey;
+                    cursor: pointer;
+                }
+
+                    .bcov-mc-selector .bcov-mc-col .bcov-mc-btn .cell {
+                        width: 50%;
+                        display: table-cell;
+                        vertical-align: top;
+                        position: relative;
+                    }
+
+                        .bcov-mc-selector .bcov-mc-col .bcov-mc-btn .cell:nth-child(1) {
+                            background: #2c758a;
+                            vertical-align: middle;
+                            text-align: center;
+                            min-height: 10%;
+                        }
+
+                        .bcov-mc-selector .bcov-mc-col .bcov-mc-btn .cell img {
+                            width: 100%;
+                            color: #fff;
+                            font-size: 16px;
+                            font-weight: 700;
+                            text-transform: uppercase;
+                            min-width: 100%;
+                        }
+
+                        .bcov-mc-selector .bcov-mc-col .bcov-mc-btn .cell .bcov-img-active {
+                            position: absolute;
+                            background: #eb001c;
+                            color: #fff;
+                            text-transform: uppercase;
+                            font-weight: 700;
+                            padding: 5px 15px;
+                            top: 0;
+                            right: 0;
+                        }
+
+                        .bcov-mc-selector .bcov-mc-col .bcov-mc-btn .cell .bcov-meta {
+                            width: 100%;
+                            padding: 15px;
+                        }
+
+                            .bcov-mc-selector .bcov-mc-col .bcov-mc-btn .cell .bcov-meta .bcov-title {
+                                font-size: 16px;
+                                color: #000;
+                                font-weight: 700;
+                            }
+
+                                .bcov-mc-selector .bcov-mc-col .bcov-mc-btn:hover .cell .bcov-meta .bcov-title,
+                                .bcov-mc-selector .bcov-mc-col .bcov-mc-btn .cell .bcov-meta .bcov-title.active {
+                                    color: #eb001c;
+                                }
+
+                            .bcov-mc-selector .bcov-mc-col .bcov-mc-btn .cell .bcov-meta .bcov-desc {
+                                color: #828282;
+                            }
+
+        @media only screen and (max-width: 727px) {
+            .bcov-mc-selector .bcov-mc-col {
+                width: 100%;
+            }
+
+                .bcov-mc-selector .bcov-mc-col:nth-child(2) {
+                    padding-right: 15px !important;
+                }
+
+                .bcov-mc-selector .bcov-mc-col:nth-child(3) {
+                    padding-left: 15px !important;
+                }
+
+                .bcov-mc-selector .bcov-mc-col .bcov-mc-btn .cell .bcov-meta {
+                    padding: 10px;
+                }
+        }
+    </style>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="article-col">
+        <div class="article-title">Brightcove Basic Multicamera Setup</div>
+        <div style="position: relative; display: block; max-width: 100%;">
+            <div style="padding-top: 56.25%;">
+                <video id="multicam-bcov-player" data-video-id="5655729602001" data-account="3755095957001" data-player="Hywz31jWl" data-embed="default"
+                       data-application-id class="video-js" controls style="position: absolute; top: 0px; right: 0px; bottom: 0px; left: 0px; width: 100%; height: 100%;"></video>
+                <script src="//players.brightcove.net/3755095957001/Hywz31jWl_default/index.min.js"></script>
+            </div>
+        </div>
+        <div class="bcov-mc-selector">
+            <div class="bcov-mc-header"><i class="fas fa-eye"></i> Select a camera view</div>
+            <div class="bcov-mc-col">
+                <div class="bcov-mc-btn" vid-id="5655729602001" onclick="changeVideo('5655729602001', 1)">
+                    <div class="cell">
+                        <span id="bcov-img-act-cam1" class="bcov-img-active">Watching</span>
+                        <img alt="Main Camera" id="bcov-img1" src="" />
+                    </div>
+                    <div class="cell">
+                        <div class="bcov-meta">
+                            <span class="bcov-title active" id="bcov-title1">Main Camera</span>
+                            <br />
+                            <span class="bcov-desc" id="bcov-description1">Main Camera</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bcov-mc-col">
+                <div class="bcov-mc-btn" vid-id="5777136787001" onclick="changeVideo('5777136787001', 2)">
+                    <div class="cell">
+                        <span id="bcov-img-act-cam2" class="bcov-img-active" style="display: none;">Watching</span>
+                        <img alt="Icon Camera" id="bcov-img2" src="" />
+                    </div>
+                    <div class="cell">
+                        <div class="bcov-meta">
+                            <span class="bcov-title" id="bcov-title2">Icon Camera</span>
+                            <br />
+                            <span class="bcov-desc" id="bcov-description2">Icon Camera</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- JavaScript -->
+    <!-- jQuery first, then custom script -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script>
+        var myPlayer;
+        var list
+        videojs("multicam-bcov-player").ready(function () {
+            myPlayer = this;
+            //myPlayer.play();
+            list = getListOfVideos();
+            list.forEach(function (value, index) {
+                getVideoInfo(value, index);
+            })
+        });
+
+        function changeVideo(vid, n) {
+            $(".bcov-title").removeClass("active");
+            $("#bcov-title" + n).addClass("active");
+            $(".bcov-img-active").hide();
+            $("#bcov-img-act-cam" + n).show();
+
+            myPlayer.catalog.getVideo(vid, function (error, video) {
+                myPlayer.catalog.load(video);
+                myPlayer.play();
+            });
+        }
+
+        function getListOfVideos() {
+            var domlist = $("[vid-id]")
+            var idlist = [];
+            domlist.each(function (index, value) {
+                idlist.push($(value).attr("vid-id"))
+            });
+            return idlist;
+        }
+
+        function getVideoInfo(vid, index) {
+            var accountid = myPlayer.bcinfo.accountId;
+            var apiBaseURL = 'https://edge.api.brightcove.com/playback/v1';
+            var requestURL = apiBaseURL + '/accounts/' + accountid + '/videos/' + vid;
+            //var policy_key = "BCpkADawqM22CAnZIpMY0aPrg15208EMH0JpHI1sKf0CYL38SI7CDTtBXGCWyhStIcgiwT34UaKukJeSoxXqp-VZnqzPCGcFvrxmS1Stj5ugHMtu3vd1f7AoGeaG_56s2vCLBYL88EdJWK9rWjPRScwRrEIs-fr5avYADyjAxE9f3mbHUDUXkStZtbNzxSsAd-IsKClw-x089JaBr7FNons-2GJL_5bAbMETZZ1V2akIZkTsuZhZTjokVVhYnP9_p0CH3C89yryjr2n2nJo7yrCAyZx4ubqkvo66Ki_qdN5onL0xHtNC_c5z4Gmq_eSMKMhJDhvs4VLH07IjzmExiA8JGAbnLIoCo1B4Y3BKDn7Na4xzD3l19wMcRyNzEWBdO99kzsZDBuxtZE1HisNk_Cvz4-POkVsoMdRDuYXSeGN2eTu0ryM9vfjR2Ic6cjOb5EljQ2uXMARyn8vJW99wHUp4Tpjqw28TPvB6T0HiBlZK1uU4V5l6adTrIONnrW1WNrR3oZZjxcVNKGFG"
+            //var policy_key = "BCpkADawqM22CAnZIpMY0aPrg15208EMH0JpHI1sKf0CYL38SI7CDTtBXGCWyhStIcgiwT34UaKukJeSoxXqp-VZnqzPCGcFvrxmS1Stj5ugHMtu3vd1f7AoGeaG_56s2vCLBYL88EdJWK9rWjPRScwRrEIs-fr5avYADyjAxE9f3mbHUDUXkStZtbNzxSsAd-IsKClw-x089JaBr7FNons-2GJL_5bAbMETZZ1V2akIZkTsuZhZTjokVVhYnP9_p0CH3C89yryjr2n2nJo7yrCAyZx4ubqkvo66Ki_qdN5onL0xHtNC_c5z4Gmq_eSMKMhJDhvs4VLH07IjzmExiA8JGAbnLIoCo1B4Y3BKDn7Na4xzD3l19wMcRyNzEWBdO99kzsZDBuxtZE1HisNk_Cvz4-POkVsoMdRDuYXSeGN2eTu0ryM9vfjR2Ic6cjOb5EljQ2uXMARyn8vJW99wHUp4Tpjqw28TPvB6T0HiBlZK1uU4V5l6adTrIONnrW1WNrR3oZZjxcVNKGF"
+            var policy_key = "BCpkADawqM02V1i9WIxJ6ayIs8sViZv90Mp78QtcYc6JLHvCE7uekp9YqM-n0wIvGCM1EgzBh6NtMgxPA1jb0pVmG_Hkg7J_xYDSaIQ07LbTvrXeykzsBYNrwK8wQyy-4uMczLaxSWhbFCzZZQY01s7fXKxxIWa7ZEaxAUAhHCByohsvH1GrkmD8t0cwzQb2_ULiLgBtds0zkoN5kpHJwIkukoXG7QfKuFaF3dBFyW6kizAs9XUp0J1ItA4Xyc_Xx9-GmJZxgtkMluMgHGGMDmITbQSZqygM0CQUG_SP_EbLUp77UWkgBNPpNpBeWs53WkbnzjT5qPmfx4ft_ei2bpU0vF11cAYGo_BoYLW0gAtX29W7Ry6R9CfdGnWigHWXRxDXx1f329MDT27PW5FZ3N5wSBBPBaZdz54R7JXrzns7SVyIClWWZbRw5CDl6-EHYnkpzRP2E5ExbjcvYL9YsAuLHlkmyNGIMxFJIao07TSgMmq_1XCmwDgcrlzI-8MPXV-dJvwA7A17IYT8"
+            getMediaData(policy_key, requestURL, index);
+        }
+
+        getMediaData = function (policy_key, requestURL, index) {
+            var httpRequest = new XMLHttpRequest(),
+                responseData,
+                parsedData,
+                getResponse = function () {
+                    try {
+                        if (httpRequest.readyState === 4) {
+                            if (httpRequest.status === 200) {
+                                responseData = httpRequest.responseText;
+                                parsedData = JSON.parse(responseData);
+                                var subid = index + 1
+                                $("#bcov-img" + subid).attr("src", parsedData.thumbnail != null ? parsedData.thumbnail : $("#bcov-img" + subid).attr("src"));
+                                $("#bcov-title" + subid).html(parsedData.name != null ? parsedData.name : $("#bcov-title" + subid).html())
+                                $("#bcov-description" + subid).html(parsedData.description != null ? parsedData.description : $("#bcov-description" + subid).html())
+                            } else {
+                                console.log('There was a problem with the request. Request returned ' + httpRequest.status);
+                            }
+                        }
+                    } catch (e) {
+                        console.log('Caught Exception: ' + e);
+                    }
+                };
+            httpRequest.onreadystatechange = getResponse;
+            httpRequest.open('GET', requestURL);
+            httpRequest.setRequestHeader('Accept', 'application/json;pk=' + policy_key);
+            httpRequest.send();
+        };
+    </script>
+</body>
+
+</html>
